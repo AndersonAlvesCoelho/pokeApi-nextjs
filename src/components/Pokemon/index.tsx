@@ -1,41 +1,48 @@
-import Snorlax from '../../assets/snorlax.svg';
+
+import { usePokemon } from '../../contexts/PokemonContexts';
 
 import styles from './styles.module.scss';
 
 export function Pokemon() {
 
+        const { currentPokemonIndex, pokemonList } = usePokemon();
+
+    console.log("usePokemon ", usePokemon);
+
+    const pokemon = pokemonList[currentPokemonIndex];
+
     return (
-        <div className={styles.playerContainer}>
+        <div className={styles.pokemonContainer}>
 
             <header>
-                <Snorlax width={50} height={50} />
-                <strong>Tocando agora</strong>
+                <strong>Pokémon, Tem que pegá-los...</strong>
+                <img
+                    src="https://media.tenor.com/images/528a291987f7f2ea1d9d6b3c541e3e42/tenor.gif"
+                />
             </header>
 
+            {pokemon ? (
+                <div className={styles.currentPokemon}>
+                    <img src={pokemon.spritesFrontGif} />
+                    <strong>{pokemon.name}</strong>
 
-            <div className={styles.currentEpisode}>
-                {/* <Snorlax
-                    width={400}
-                    height={400}
-                />
-
-                <strong>Sonrlax</strong>
-                <span>Normal</span> */}
-
-                <div className={styles.emptyPlayer}>
-                    <strong>Selecione um podcast pokemon</strong>
+                    <span>Nº {('000' + pokemon.id).slice(-3)}</span>
                 </div>
-            </div>
+            ) : (
+                <div className={styles.emptyPokemon}>
+                    <strong>Quem é esse pokemon?</strong>
+                </div>
+            )}
 
 
             <footer className={styles.empty} >
-                <div className={styles.progress}>
+                {/* <div className={styles.progress}>
                     <span>Controles</span>
 
                 </div>
                 <div className={styles.buttons}>
                     <span>Numero</span>
-                </div>
+                </div> */}
 
             </footer>
         </div >
