@@ -57,6 +57,21 @@
     color: var(--gray-800);
     font: 600 2.25rem Lexend, sans-serif;
   }
+
+  .animationPokebola {
+    background: url(https://assets.pokemon.com/static2/_ui/img/chrome/loaders/pokeball_gray.png) center center no-repeat;
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 48%;
+    top: 20%;
+    -webkit-animation: loader .5s infinite;
+    -ms-animation: loader .5s infinite;
+    -moz-animation: loader .5s infinite;
+    -o-animation: loader .5s infinite;
+    animation: loader .5s infinite;
+}
 }
 
 .emptyPokemon {

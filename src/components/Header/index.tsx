@@ -2,7 +2,7 @@ import format from 'date-fns/format';
 import ptBR from 'date-fns/locale/pt-BR';
 import Lottie from 'react-lottie';
 
-import  loadPokemon from '../../assets/4366-game-east-west.json';
+import loadPokemon from '../../assets/4366-game-east-west.json';
 import styles from './styles.module.scss';
 
 export function Header() {
@@ -23,8 +23,7 @@ export function Header() {
 
     return (
         <header className={styles.headerContainer}>
-            <div className={styles.animation}>
-
+            <div>
                 <Lottie
                     options={defaultOptions}
                     height={100}
